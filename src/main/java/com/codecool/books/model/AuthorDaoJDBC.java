@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuthorDaoJDBC implements AuthorDao {
+public class AuthorDaoJDBC implements Dao<Author, Author> {
     private DataSource dataSource;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;

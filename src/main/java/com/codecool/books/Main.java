@@ -5,9 +5,7 @@ import com.codecool.books.view.UserInterface;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
@@ -17,7 +15,7 @@ public class Main {
     }
 
     UserInterface ui;
-    AuthorDao authorDao;
+    Dao<Author, Author> authorDao;
 
     Main(UserInterface ui) {
         this.ui = ui;
@@ -53,7 +51,7 @@ public class Main {
         switch (ui.choice("ij")) {
             case 'i':
                 ui.println("Using in-memory database");
-                authorDao = new AuthorDaoInMemory();
+                authorDao = new DaoInMemory();
                 createInitialData();
                 break;
             case 'j':
