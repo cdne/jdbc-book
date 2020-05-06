@@ -68,9 +68,9 @@ public class Main {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
 
         // TODO: update database parameters
-        dataSource.setDatabaseName("books");
-        dataSource.setUser("pawel");
-        dataSource.setPassword("pawel");
+        dataSource.setDatabaseName("jdbc_books");
+        dataSource.setUser("postgres");
+        dataSource.setPassword("1234");
 
         ui.println("Trying to connect...");
         dataSource.getConnection().close();
@@ -80,7 +80,7 @@ public class Main {
     }
 
 
-    private void createInitialData() {
+    private void createInitialData() throws SQLException {
         ui.println("Creating initial data");
 
         Author author1 = new Author("J.R.R.", "Tolkien", Date.valueOf("1982-01-03"));
