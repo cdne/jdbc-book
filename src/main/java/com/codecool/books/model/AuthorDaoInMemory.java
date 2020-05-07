@@ -2,7 +2,7 @@ package com.codecool.books.model;
 
 import java.util.*;
 
-public class DaoInMemory implements Dao<Author, Author> {
+public class AuthorDaoInMemory implements Dao<Author, Author> {
     Map<Integer, Author> authors = new HashMap<>();
     int idCounter = 0;
 
