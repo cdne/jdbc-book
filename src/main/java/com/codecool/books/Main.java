@@ -61,6 +61,7 @@ public class Main {
                 ui.println("Using JDBC");
                 DataSource dataSource = connect();
                 authorDao = new AuthorDaoJDBC(dataSource);
+                bookDao = new BookDaoJDBC(dataSource, authorDao);
                 break;
         }
     }

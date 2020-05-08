@@ -13,7 +13,7 @@ public class BookManager extends Manager {
     Dao<Author, Author> authorDao;
 
 
-    public BookManager(UserInterface ui, Dao<Book, Book> bookDao, Dao<Author, Author> authorDao) throws SQLException {
+    public BookManager(UserInterface ui, Dao<Book, Book> bookDao, Dao<Author, Author> authorDao){
         super(ui);
         this.bookDao = bookDao;
         this.authorDao = authorDao;
@@ -48,7 +48,9 @@ public class BookManager extends Manager {
         }
         ui.println(book);
         String title = ui.readString("Title: ", book.getTitle());
+        int authorId = ui.readInt("Author Id: ", book.getAuthor().getId());
         book.setTitle(title);
+        book.setAuthor(authorDao.get(authorId));
         bookDao.update(book);
     }
 }

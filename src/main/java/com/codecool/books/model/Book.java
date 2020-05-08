@@ -39,7 +39,7 @@ public class Book {
     @Override
     public String toString() {
         return String.format("Book %d: %s | %s",
-                id, title, author);
+                getId(), title, author);
     }
 
 }
